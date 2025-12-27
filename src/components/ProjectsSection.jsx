@@ -1,3 +1,5 @@
+import { themeClasses } from '../constants/theme'
+
 function ProjectsSection() {
   const projects = [
     {
@@ -17,25 +19,25 @@ function ProjectsSection() {
   return (
     <section 
       id="projects" 
-      className="bg-[#E7FFF4] px-4 py-16"
+      className={`${themeClasses.bg.background} px-4 py-16`}
     >
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#386E55] mb-12">
+        <h2 className={`text-3xl md:text-4xl font-bold ${themeClasses.text.dark} mb-12`}>
           Projects
         </h2>
         <div className="space-y-6">
           {projects.map((project) => (
             <article 
               key={project.id}
-              className="bg-[#C6F6D5] rounded-xl p-6"
+              className={`${themeClasses.bg.projectCard} rounded-xl p-6`}
             >
-              <h3 className="text-xl font-bold text-[#386E55] mb-2">
+              <h3 className={`text-xl font-bold ${themeClasses.text.primary} mb-2`}>
                 {project.title}
               </h3>
-              <p className="text-sm text-[#386E55] opacity-80 mb-2">
+              <p className={`text-sm ${themeClasses.text.primary} opacity-80 mb-2`}>
                 {project.stack}
               </p>
-              <p className="text-[#386E55]">
+              <p className={themeClasses.text.primary}>
                 {project.description}
               </p>
             </article>

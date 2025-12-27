@@ -1,18 +1,20 @@
+import { themeClasses } from '../constants/theme'
+
 function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-[#E7FFF4] px-4 py-8">
+    <footer className={`${themeClasses.bg.background} px-4 py-8`}>
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-sm text-[#386E55]">
-            Copyright Cassidy Hassell {currentYear}
+          <p className={`text-sm ${themeClasses.text.primary}`}>
+            © Cassidy Hassell {currentYear}
           </p>
           <a
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#386E55] hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-[#386E55] focus:ring-offset-2 rounded"
+            className={`${themeClasses.text.primary} hover:opacity-80 focus:outline-none focus:ring-2 ${themeClasses.ring.primary} focus:ring-offset-2 rounded`}
             aria-label="GitHub"
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
