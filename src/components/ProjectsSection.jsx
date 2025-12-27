@@ -6,15 +6,21 @@ function ProjectsSection() {
   const projects = [
     {
       id: 1,
-      title: 'Project Title',
+      title: 'Bookstore Desktop Application',
       description: 'Project Description',
-      stack: ['React', 'TypeScript', 'Tailwind CSS']
+      stack: ['Python', 'MySQL', 'SqlAlchemy', 'Flask']
     },
     {
       id: 2,
-      title: 'Project Title',
+      title: 'Panda Express POS System Web App',
       description: 'Project Description',
-      stack: ['Node.js', 'Express', 'MongoDB']
+      stack: ['Next.js', 'PostgreSQL', 'React', 'TailwindCSS', 'Agile Development']
+    },
+    {
+      id: 3,
+      title: 'Loam: Grocery & Expiration Tracking',
+      description: 'Project Description',
+      stack: ['Node.js', 'PostgreSQL', 'Express', 'React', 'Typescript']
     }
   ]
 
@@ -28,6 +34,7 @@ function ProjectsSection() {
             title={project.title}
             stack={project.stack}
             description={project.description}
+            image={project?.image}
           />
         ))}
       </div>

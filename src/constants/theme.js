@@ -26,13 +26,14 @@ export const theme = {
  */
 export const themeClasses = {
   bg: {
-    background: 'bg-[#E7FFF4]',
+    background: 'bg-[#F0FEF8]',
     primary: 'bg-[#386E55]',
     projectCard: 'bg-[#C6F6D5]',
   },
   text: {
     dark: 'text-[#122C26]',
     primary: 'text-[#386E55]',
+    accent: 'text-[#E30000]'
   },
   border: {
     primary: 'border-[#386E55]',
@@ -42,7 +43,7 @@ export const themeClasses = {
   },
   fontSize: {
     // Hero section - largest, most prominent
-    heroHeading: 'text-4xl md:text-6xl', // 2.25rem / 3.75rem - Main hero title
+    heroHeading: 'text-2xl md:text-3xl', // 2.25rem / 3.75rem - Main hero title
     heroSubtitle: 'text-lg md:text-xl', // 1.125rem / 1.25rem - Hero description
     
     // Section headings
