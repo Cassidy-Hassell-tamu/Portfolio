@@ -1,6 +1,6 @@
 /**
  * Theme constants for the portfolio
- * Centralized color definitions for maintainability and scalability
+ * Centralized color and typography definitions for maintainability and scalability
  */
 export const theme = {
   colors: {
@@ -11,9 +11,18 @@ export const theme = {
 }
 
 /**
- * Helper function to generate Tailwind classes with theme colors
- * Usage: className={`bg-${theme.colors.background}`} won't work with Tailwind
- * Instead, use: className={theme.bg.background}
+ * Font sizing system using semantic names
+ * Uses rem-based sizing (relative units) for better accessibility and scalability
+ * Responsive variants included where appropriate
+ * 
+ * Usage guidelines:
+ * - heroHeading: Main hero title (h1) - largest, most prominent text
+ * - heroSubtitle: Hero description/subtitle - secondary hero text
+ * - sectionHeading: Section titles (h2) - major section headers
+ * - cardTitle: Card/article titles (h3) - titles within content cards
+ * - body: Regular body text - default paragraph text
+ * - small: Small text - captions, metadata, tech stacks
+ * - navigation: Navigation links and brand names - nav bar text
  */
 export const themeClasses = {
   bg: {
@@ -30,6 +39,26 @@ export const themeClasses = {
   },
   ring: {
     primary: 'ring-[#386E55]',
+  },
+  fontSize: {
+    // Hero section - largest, most prominent
+    heroHeading: 'text-4xl md:text-6xl', // 2.25rem / 3.75rem - Main hero title
+    heroSubtitle: 'text-lg md:text-xl', // 1.125rem / 1.25rem - Hero description
+    
+    // Section headings
+    sectionHeading: 'text-3xl md:text-4xl', // 1.875rem / 2.25rem - Section titles (h2)
+    
+    // Card and article titles
+    cardTitle: 'text-xl', // 1.25rem - Card/article titles (h3)
+    
+    // Body text - default paragraph text
+    body: 'text-base', // 1rem - Regular body text
+    
+    // Small text - captions, metadata, tech stacks
+    small: 'text-sm', // 0.875rem - Small text for captions and metadata
+    
+    // Navigation - nav links and brand names
+    navigation: 'text-xl', // 1.25rem - Navigation links and brand names
   },
 }
 

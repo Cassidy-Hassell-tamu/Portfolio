@@ -22,7 +22,7 @@ function ProjectsSection() {
       className={`${themeClasses.bg.background} px-4 py-16`}
     >
       <div className="container mx-auto max-w-4xl">
-        <h2 className={`text-3xl md:text-4xl font-bold ${themeClasses.text.dark} mb-12`}>
+        <h2 className={`${themeClasses.fontSize.sectionHeading} font-bold ${themeClasses.text.dark} mb-12`}>
           Projects
         </h2>
         <div className="space-y-6">
@@ -31,13 +31,13 @@ function ProjectsSection() {
               key={project.id}
               className={`${themeClasses.bg.projectCard} rounded-xl p-6`}
             >
-              <h3 className={`text-xl font-bold ${themeClasses.text.primary} mb-2`}>
+              <h3 className={`${themeClasses.fontSize.cardTitle} font-bold ${themeClasses.text.primary} mb-2`}>
                 {project.title}
               </h3>
-              <p className={`text-sm ${themeClasses.text.primary} opacity-80 mb-2`}>
+              <p className={`${themeClasses.fontSize.small} ${themeClasses.text.primary} opacity-80 mb-2`}>
                 {project.stack}
               </p>
-              <p className={themeClasses.text.primary}>
+              <p className={`${themeClasses.fontSize.body} ${themeClasses.text.primary}`}>
                 {project.description}
               </p>
             </article>

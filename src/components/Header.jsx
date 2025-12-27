@@ -14,7 +14,7 @@ function Header() {
         <div className="flex items-center justify-between">
           <a 
             href="#home" 
-            className={`text-xl font-bold ${themeClasses.text.primary} focus:outline-none focus:ring-2 ${themeClasses.ring.primary} focus:ring-offset-2 rounded`}
+            className={`${themeClasses.fontSize.navigation} font-bold ${themeClasses.text.primary} focus:outline-none focus:ring-2 ${themeClasses.ring.primary} focus:ring-offset-2 rounded`}
             onClick={(e) => {
               e.preventDefault()
               scrollToSection('home')

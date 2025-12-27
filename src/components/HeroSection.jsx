@@ -9,10 +9,10 @@ function HeroSection() {
       <div className="container mx-auto max-w-4xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <h1 className={`text-4xl md:text-6xl font-bold mb-4 ${themeClasses.text.dark}`}>
+            <h1 className={`${themeClasses.fontSize.heroHeading} font-bold mb-4 ${themeClasses.text.dark}`}>
               My title here...
             </h1>
-            <p className={`text-lg md:text-xl ${themeClasses.text.dark} opacity-80`}>
+            <p className={`${themeClasses.fontSize.heroSubtitle} ${themeClasses.text.dark} opacity-80`}>
               My short description...
             </p>
           </div>
