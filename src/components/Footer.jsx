@@ -6,8 +6,8 @@ function Footer() {
   return (
     <footer className={`${themeClasses.bg.background} px-4 py-8`}>
       <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col sm:flex-row justify-between items-center">
-          <p className={`text-sm ${themeClasses.text.primary}`}>
+        <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-4 sm:gap-0 w-full">
+          <p className={`text-sm ${themeClasses.text.primary} text-center sm:text-left w-full sm:w-auto`}>
             © Cassidy Hassell {currentYear}
           </p>
           <a
