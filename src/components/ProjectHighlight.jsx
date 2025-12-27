@@ -14,7 +14,7 @@ import { themeClasses } from '../constants/theme'
  * Props:
  * @param {string} title - Project title
  * @param {string[]} stack - Array of technologies used in the project
- * @param {string} description - Project description
+ * @param {string[]} description - Project description
  * @param {string} [image] - Optional image URL for project highlight
  */
 function ProjectHighlight({ title, stack, description, image }) {
@@ -38,9 +38,11 @@ function ProjectHighlight({ title, stack, description, image }) {
               </ul>
             </div>
           )}
-          <p className={`${themeClasses.fontSize.body} ${themeClasses.text.primary}`}>
-            {description}
-          </p>
+          <div className={`${themeClasses.fontSize.body} ${themeClasses.text.primary} space-y-2 mb-4`}>
+            {description.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
         </div>
         {image && (
           <div className="flex-shrink-0 md:ml-4 mt-4 md:mt-0 flex items-center justify-center">
