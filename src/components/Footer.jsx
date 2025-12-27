@@ -11,7 +11,7 @@ function Footer() {
             © Cassidy Hassell {currentYear}
           </p>
           <a
-            href="https://github.com"
+            href="https://github.com/Cassidy-Hassell-tamu"
             target="_blank"
             rel="noopener noreferrer"
             className={`${themeClasses.text.primary} hover:opacity-80 focus:outline-none focus:ring-2 ${themeClasses.ring.primary} focus:ring-offset-2 rounded`}
