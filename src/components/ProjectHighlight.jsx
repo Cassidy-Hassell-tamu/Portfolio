@@ -27,7 +27,7 @@ function ProjectHighlight({ title, stack, description }) {
           <ul className="flex flex-wrap gap-2" role="list">
             {stack.map((tech, index) => (
               <li key={index}>
-                <span className={`${themeClasses.fontSize.small} ${themeClasses.text.primary} px-2.5 py-1 bg-white/70 rounded hover:scale-130 transition-transform duration-200 cursor-default`}>
+                <span className={`${themeClasses.fontSize.small} ${themeClasses.text.primary} px-2.5 py-1 bg-white/70 rounded inline-block transition-transform duration-200 hover:scale-105`}>
                   {tech}
                 </span>
               </li>
