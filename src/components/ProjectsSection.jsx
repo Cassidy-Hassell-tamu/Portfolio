@@ -11,7 +11,8 @@ function ProjectsSection() {
         ['This bookstore app is a full‑stack Python project that simulates a small bookstore with separate customer and manager experiences. It uses a desktop GUI client that talks to a Flask REST API backed by a MySQL database, with JWT‑based authentication and role‑based authorization to keep customer and manager actions separate.',
           'Customers can search and filter books, view details, add items to an order as rentals or purchases, and check out, with the system generating simple HTML bills and sending them via an SMTP email service. Managers can add and update books, manage authors, review orders by payment status, and mark orders as completed, all on top of a relational schema with migrations, seeding scripts using Faker, and indexes added to keep common queries and filters fast as data grows.'
         ],
-      stack: ['Python', 'MySQL', 'SqlAlchemy', 'Flask']
+      stack: ['Python', 'MySQL', 'SqlAlchemy', 'Flask'],
+      flags: ['Course Project']
     },
     {
       id: 2,
@@ -20,7 +21,8 @@ function ProjectsSection() {
         ['Built a full‑stack point‑of‑sale web app for a Panda Express–style restaurant, with a RESTful API, normalized relational database, and third‑party integrations for authentication, translation, and weather. The system supports multiple user types, including cashiers, customers, managers, and kitchen staff, with tailored workflows for each.',
           'This 1.5‑month course project followed Agile practices with three sprints and two user studies. I served as scrum master and led development of core features such as authentication, the kitchen order queue, and a high‑contrast accessibility mode aligned with WCAG 2.1 for users relying on screen readers and screen magnification.'
         ],
-      stack: ['Next.js', 'PostgreSQL', 'React', 'TailwindCSS', 'Agile Development']
+      stack: ['Next.js', 'PostgreSQL', 'React', 'TailwindCSS', 'Agile Development'],
+      flags: ['Course Project']
     },
     {
       id: 3,
@@ -29,7 +31,8 @@ function ProjectsSection() {
         ["Loam started from a simple problem: it’s easy to forget what’s in your fridge and when it expires. I began exploring a solution as a native Android app, then moved the project to the web to iterate faster between semesters and make it easier to access across devices.",
           "The current version focuses on tracking groceries, expiration dates, and reminders so users can waste less food and plan meals more easily. This project has been my sandbox for learning full‑stack development and what it takes to shape a product from scratch."
         ],
-      stack: ['Node.js', 'PostgreSQL', 'Express', 'React', 'Typescript']
+      stack: ['Node.js', 'PostgreSQL', 'Express', 'React', 'Typescript'],
+      flags: ['In Progress', 'Personal Project']
     }
   ]
 
@@ -44,6 +47,7 @@ function ProjectsSection() {
             stack={project.stack}
             description={project.description}
             image={project?.image}
+            flags={project?.flags}
           />
         ))}
       </div>

@@ -4,9 +4,12 @@
  */
 export const theme = {
   colors: {
-    background: '#E7FFF4',
+    background: '#F0FEF8',
     primary: '#386E55',
     projectCard: '#C6F6D5',
+    accent: '#E30000',
+    accentLight: '#F3D0D0',
+    textDark: '#122C26',
   }
 }
 
@@ -29,6 +32,7 @@ export const themeClasses = {
     background: 'bg-[#F0FEF8]',
     primary: 'bg-[#386E55]',
     projectCard: 'bg-[#C6F6D5]',
+    accentLight: 'bg-[#F3D0D0]',
   },
   text: {
     dark: 'text-[#122C26]',
@@ -37,6 +41,7 @@ export const themeClasses = {
   },
   border: {
     primary: 'border-[#386E55]',
+    accentLight: 'border-[#E39090]', 
   },
   ring: {
     primary: 'ring-[#386E55]',
