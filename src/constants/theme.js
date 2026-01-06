@@ -1,15 +1,32 @@
+import { text } from "express"
+
 /**
  * Theme constants for the portfolio
  * Centralized color and typography definitions for maintainability and scalability
  */
 export const theme = {
   colors: {
-    background: '#F0FEF8',
+    background: '#FFFFFF',
+    textDark: '#000000',
+    textLight: '#FFFFFF',
+
     primary: '#386E55',
-    projectCard: '#C6F6D5',
-    accent: '#E30000',
-    accentLight: '#F3D0D0',
-    textDark: '#122C26',
+    onPrimary: '#FFFFFF',
+    primaryContainer: '#B5E9D1',
+    onPrimaryContainerText: '#000000',
+    onPrimaryContainerDark: '#122C26',
+    onPrimaryContainerLight: '#386E55',
+
+    secondary: '#ff4f23',
+    onSecondary: '#FFFFFF',
+    secondaryContainer: '#FF7F5E',
+    onSecondaryContainer: '#410001',
+    onSecondaryContainerText: '#000000',
+
+    neutral: '#636262',
+    onNeutral: '#FFFFFF',
+    neutralContainer: '#EBEBEB',
+    onNeutralContainer: '#000000',
   }
 }
 
@@ -29,22 +46,41 @@ export const theme = {
  */
 export const themeClasses = {
   bg: {
-    background: 'bg-[#F0FEF8]',
-    primary: 'bg-[#386E55]',
-    projectCard: 'bg-[#C6F6D5]',
-    accentLight: 'bg-[#F3D0D0]',
+    background: `bg-[${theme.colors.background}]`,
+
+    primary: `bg-[${theme.colors.primary}]`,
+    primaryContainer: `bg-[${theme.colors.primaryContainer}]`,
+
+    secondary: `bg-[${theme.colors.secondary}]`,
+    secondaryContainer: `bg-[${theme.colors.secondaryContainer}]`,
+
+    neutral: `bg-[${theme.colors.neutral}]`,
+    neutralContainer: `bg-[${theme.colors.neutralContainer}]`,
   },
   text: {
-    dark: 'text-[#122C26]',
-    primary: 'text-[#386E55]',
-    accent: 'text-[#E30000]'
+    dark: `text-[${theme.colors.textDark}]`,
+    light: `text-[${theme.colors.textLight}]`,
+
+    primary: `text-[${theme.colors.onPrimary}]`,
+    primaryContainer: `text-[${theme.colors.onPrimaryContainerText}]`,
+    primaryContainerDark: `text-[${theme.colors.onPrimaryContainerDark}]`,
+    primaryContainerLight: `text-[${theme.colors.onPrimaryContainerLight}]`,
+
+    secondary: `text-[${theme.colors.onSecondary}]`,
+    secondaryContainer: `text-[${theme.colors.onSecondaryContainer}]`,
+
+    neutral: `text-[${theme.colors.neutral}]`,
+    neutralContainer: `text-[${theme.colors.onNeutralContainer}]`,
   },
   border: {
-    primary: 'border-[#386E55]',
-    accentLight: 'border-[#E39090]', 
+    primary: `border-[${theme.colors.primary}]`,
+    secondary: `border-[${theme.colors.secondary}]`,
+    neutral: `border-[${theme.colors.neutral}]`,
   },
   ring: {
-    primary: 'ring-[#386E55]',
+    primary: `ring-[${theme.colors.primary}]`,
+    secondary: `ring-[${theme.colors.secondary}]`,
+    neutral: `ring-[${theme.colors.neutral}]`,
   },
   fontSize: {
     // Hero section - largest, most prominent
@@ -53,16 +89,12 @@ export const themeClasses = {
     
     // Section headings
     sectionHeading: 'text-3xl md:text-4xl', // 1.875rem / 2.25rem - Section titles (h2)
-    
     // Card and article titles
     cardTitle: 'text-xl', // 1.25rem - Card/article titles (h3)
-    
     // Body text - default paragraph text
     body: 'text-base', // 1rem - Regular body text
-    
     // Small text - captions, metadata, tech stacks
     small: 'text-sm', // 0.875rem - Small text for captions and metadata
-    
     // Navigation - nav links and brand names
     navigation: 'text-xl', // 1.25rem - Navigation links and brand names
   },
