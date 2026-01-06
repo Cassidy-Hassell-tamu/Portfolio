@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import ProjectsSection from './components/ProjectsSection'
+import SkillsSection from './components/SkillsSection'
 import Footer from './components/Footer'
 import { themeClasses } from './constants/theme'
 
@@ -11,6 +12,7 @@ function App() {
       <main className="flex-grow">
         <HeroSection />
         <ProjectsSection />
+        <SkillsSection />
       </main>
       <Footer />
     </div>
