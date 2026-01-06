@@ -4,22 +4,27 @@ import SectionContainer from './SectionContainer'
 function HeroSection() {
   return (
     <SectionContainer id="home">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="order-2 lg:order-1">
-          <h1 className={`${themeClasses.fontSize.heroHeading} italic mb-4 ${themeClasses.text.dark}`}>
-            Hi, I’m Cassidy Hassell.
-          </h1>
-          <p className={`${themeClasses.fontSize.heroSubtitle} ${themeClasses.text.dark} opacity-80 mb-4`}>
-            Computer science honors student focused on software development, with a studio art minor that gives me a 
-            stronger eye for layout and visual clarity.
-          </p>
-          <p className={`${themeClasses.fontSize.heroSubtitle} ${themeClasses.text.dark} opacity-80`}>
-            My coursework and projects are grounded in CS, and I’ve added design fundamentals like color theory, graphic 
-            design, and self-taught Figma work so I can communicate ideas and interfaces clearly to both engineers and designers.
-          </p>
+      <div className="flex flex-col md:flex-row items-start gap-8 py-12 min-h-[320px] md:min-h-[400px]">
+        <div className="flex-shrink-0 w-40 md:w-56 aspect-[0.8/1] bg-neutralContainer rounded-2xl flex items-center justify-center overflow-hidden mr-0 md:mr-8">
+          <img src="/Headshot.jpg" alt="Headshot of Cassidy Hassell" className="w-full h-full object-cover rounded-2xl" style={{ aspectRatio: '0.8 / 1' }} />
         </div>
-        <div className="flex justify-center lg:justify-end order-1 lg:order-2">
-          <img src="/Headshot.jpg" alt="Headshot of Cassidy Hassell" className="rounded-3xl w-full max-w-sm aspect-square object-cover" />
+        <div className="flex-1 flex flex-col items-start">
+          <span className="text-sm text-neutral mb-2">Hi, I'm Cassidy</span>
+          <h1 className="text-2xl md:text-3xl font-bold text-textDark mb-6">Junior CS Undergrad @ TAMU</h1>
+          <p className={`${themeClasses.fontSize.heroSubtitle} ${themeClasses.text.dark} opacity-80 mb-4`}>
+            Computer science honors student passionate about building robust software and tackling complex problems.
+          </p>
+          <p className={`${themeClasses.fontSize.heroSubtitle} ${themeClasses.text.dark} opacity-80 mb-6`}>
+            I've had experience with full-stack development, algorithms, and team projects. My studio art minor also helps me with visual clarity and communication.
+          </p>
+          <a
+            href="/Resume.pdf"
+            className="inline-flex items-center px-5 py-2 rounded-full bg-secondaryContainer text-onSecondaryContainer font-semibold shadow hover:bg-secondaryContainer transition text-sm"
+            download
+          >
+            Resume
+            <img src="/download.svg" alt="Download icon" className="w-4 h-4 ml-2" />
+          </a>
         </div>
       </div>
     </SectionContainer>

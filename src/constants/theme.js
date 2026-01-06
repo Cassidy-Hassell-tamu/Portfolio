@@ -1,39 +1,4 @@
 /**
- * Theme constants for the portfolio
- * Centralized color and typography definitions for maintainability and scalability
- */
-export const theme = {
-  colors: {
-    background: '#FFFFFF',
-    textDark: '#000000',
-    textLight: '#FFFFFF',
-
-    primary: '#386E55',
-    onPrimary: '#FFFFFF',
-    primaryContainer: '#B5E9D1',
-    onPrimaryContainerText: '#000000',
-    onPrimaryContainerDark: '#122C26',
-    onPrimaryContainerLight: '#386E55',
-
-    secondary: '#ff4f23',
-    onSecondary: '#FFFFFF',
-    secondaryContainer: '#FF7F5E',
-    onSecondaryContainer: '#410001',
-    onSecondaryContainerText: '#000000',
-
-    secondaryLight: '#ffab90',
-    onSecondaryLight: '#000000',
-    secondaryLightContainer: '#ffd0c5',
-    onSecondaryLightContainer: '#000000',
-
-    neutral: '#636262',
-    onNeutral: '#FFFFFF',
-    neutralContainer: '#EBEBEB',
-    onNeutralContainer: '#000000',
-  }
-}
-
-/**
  * Font sizing system using semantic names
  * Uses rem-based sizing (relative units) for better accessibility and scalability
  * Responsive variants included where appropriate

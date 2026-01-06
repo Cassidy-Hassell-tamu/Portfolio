@@ -12,7 +12,7 @@ export default {
         textLight: '#FFFFFF',
         primary: '#386E55',
         onPrimary: '#FFFFFF',
-        primaryContainer: '#B5E9D1',
+        primaryContainer: '#ccf6e3',
         onPrimaryContainerText: '#000000',
         onPrimaryContainerDark: '#122C26',
         onPrimaryContainerLight: '#386E55',

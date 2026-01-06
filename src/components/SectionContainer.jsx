@@ -13,12 +13,12 @@ import { themeClasses } from '../constants/theme'
  * 
  * Props:
  * @param {string} id - Section ID for navigation
- * @param {string} padding - Vertical padding variant ('large' for py-16, 'small' for py-8, default 'large')
+ * @param {string} padding - Vertical padding variant ('large' for py-16, 'small' for py-8, default 'none')
  * @param {string} maxWidth - Max width variant ('narrow' for max-w-4xl, 'wide' for max-w-6xl, default 'narrow')
  * @param {React.ReactNode} children - Section content
  */
-function SectionContainer({ id, padding = 'large', maxWidth = 'narrow', children }) {
-  const paddingClass = padding === 'small' ? 'py-8' : 'py-16'
+function SectionContainer({ id, padding = 'none', maxWidth = 'narrow', children }) {
+  const paddingClass = padding === 'none' ? '' : padding === 'small' ? 'py-8' : 'py-16'
   const maxWidthClass = maxWidth === 'wide' ? 'max-w-6xl' : 'max-w-4xl'
 
   return (
