@@ -1,5 +1,3 @@
-import { text } from "express"
-
 /**
  * Theme constants for the portfolio
  * Centralized color and typography definitions for maintainability and scalability
@@ -22,6 +20,11 @@ export const theme = {
     secondaryContainer: '#FF7F5E',
     onSecondaryContainer: '#410001',
     onSecondaryContainerText: '#000000',
+
+    secondaryLight: '#ffab90',
+    onSecondaryLight: '#000000',
+    secondaryLightContainer: '#ffd0c5',
+    onSecondaryLightContainer: '#000000',
 
     neutral: '#636262',
     onNeutral: '#FFFFFF',
@@ -46,41 +49,41 @@ export const theme = {
  */
 export const themeClasses = {
   bg: {
-    background: `bg-[${theme.colors.background}]`,
-
-    primary: `bg-[${theme.colors.primary}]`,
-    primaryContainer: `bg-[${theme.colors.primaryContainer}]`,
-
-    secondary: `bg-[${theme.colors.secondary}]`,
-    secondaryContainer: `bg-[${theme.colors.secondaryContainer}]`,
-
-    neutral: `bg-[${theme.colors.neutral}]`,
-    neutralContainer: `bg-[${theme.colors.neutralContainer}]`,
+    background: 'bg-background',
+    primary: 'bg-primary',
+    primaryContainer: 'bg-primaryContainer',
+    secondary: 'bg-secondary',
+    secondaryContainer: 'bg-secondaryContainer',
+    secondaryLight: 'bg-secondaryLight',
+    secondaryLightContainer: 'bg-secondaryLightContainer',
+    neutral: 'bg-neutral',
+    neutralContainer: 'bg-neutralContainer',
   },
   text: {
-    dark: `text-[${theme.colors.textDark}]`,
-    light: `text-[${theme.colors.textLight}]`,
-
-    primary: `text-[${theme.colors.onPrimary}]`,
-    primaryContainer: `text-[${theme.colors.onPrimaryContainerText}]`,
-    primaryContainerDark: `text-[${theme.colors.onPrimaryContainerDark}]`,
-    primaryContainerLight: `text-[${theme.colors.onPrimaryContainerLight}]`,
-
-    secondary: `text-[${theme.colors.onSecondary}]`,
-    secondaryContainer: `text-[${theme.colors.onSecondaryContainer}]`,
-
-    neutral: `text-[${theme.colors.neutral}]`,
-    neutralContainer: `text-[${theme.colors.onNeutralContainer}]`,
+    dark: 'text-textDark',
+    light: 'text-textLight',
+    primary: 'text-onPrimary',
+    primaryContainer: 'text-onPrimaryContainerText',
+    primaryContainerDark: 'text-onPrimaryContainerDark',
+    primaryContainerLight: 'text-onPrimaryContainerLight',
+    secondary: 'text-onSecondary',
+    secondaryContainer: 'text-onSecondaryContainer',
+    secondaryLight: 'text-onSecondaryLight',
+    secondaryLightContainer: 'text-onSecondaryLightContainer',
+    neutral: 'text-neutral',
+    neutralContainer: 'text-onNeutralContainer',
   },
   border: {
-    primary: `border-[${theme.colors.primary}]`,
-    secondary: `border-[${theme.colors.secondary}]`,
-    neutral: `border-[${theme.colors.neutral}]`,
+    primary: 'border-primary',
+    secondary: 'border-secondary',
+    secondaryLight: 'border-secondaryLight',
+    neutral: 'border-neutral',
   },
   ring: {
-    primary: `ring-[${theme.colors.primary}]`,
-    secondary: `ring-[${theme.colors.secondary}]`,
-    neutral: `ring-[${theme.colors.neutral}]`,
+    primary: 'ring-primary',
+    secondary: 'ring-secondary',
+    secondaryLight: 'ring-secondaryLight',
+    neutral: 'ring-neutral',
   },
   fontSize: {
     // Hero section - largest, most prominent

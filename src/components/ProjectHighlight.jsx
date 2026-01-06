@@ -21,7 +21,7 @@ import FlagBubble from './FlagBubble'
  */
 function ProjectHighlight({ title, stack, description, image, flags }) {
   return (
-    <article className={`${themeClasses.bg.projectCard} rounded-xl p-6 relative overflow-visible`}>
+    <article className={`${themeClasses.bg.primaryContainer} rounded-xl p-6 relative overflow-visible`}>
       {/* Status Flags */}
       {Array.isArray(flags) && flags.length > 0 && (
         <div className="absolute -top-3 -right-4 flex flex-row-reverse gap-2 z-10">
@@ -33,7 +33,7 @@ function ProjectHighlight({ title, stack, description, image, flags }) {
       {/* Main Card Content */}
       <div className="flex flex-col md:flex-row items-start md:items-stretch gap-4">
         <div className="flex-1">
-          <h3 className={`${themeClasses.fontSize.cardTitle} font-bold ${themeClasses.text.primary} mb-2`}>
+          <h3 className={`${themeClasses.fontSize.cardTitle} font-bold ${themeClasses.text.primaryContainerLight} mb-2`}>
             {title}
           </h3>
           {/* Tech Stack */}
@@ -42,7 +42,7 @@ function ProjectHighlight({ title, stack, description, image, flags }) {
               <ul className="flex flex-wrap gap-2" role="list">
                 {stack.map((tech, index) => (
                   <li key={index}>
-                    <span className={`${themeClasses.fontSize.small} ${themeClasses.text.primary} px-2.5 py-1 bg-white/70 rounded inline-block transition-transform duration-200 hover:scale-105`}>
+                    <span className={`${themeClasses.fontSize.small} ${themeClasses.text.primaryContainerDark} px-2.5 py-1 bg-white/70 rounded inline-block transition-transform duration-200 hover:scale-105`}>
                       {tech}
                     </span>
                   </li>
@@ -50,7 +50,7 @@ function ProjectHighlight({ title, stack, description, image, flags }) {
               </ul>
             </div>
           )}
-          <div className={`${themeClasses.fontSize.body} ${themeClasses.text.primary} space-y-2 mb-4`}>
+          <div className={`${themeClasses.fontSize.body} ${themeClasses.text.primaryContainerDark} space-y-2 mb-4`}>
             {description.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}

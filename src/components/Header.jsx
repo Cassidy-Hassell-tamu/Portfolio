@@ -14,7 +14,7 @@ function Header() {
         <div className="flex items-center justify-between">
           <a 
             href="#home" 
-            className={`${themeClasses.fontSize.navigation} font-bold ${themeClasses.text.primary} focus:outline-none focus:ring-2 ${themeClasses.ring.primary} focus:ring-offset-2 rounded`}
+            className={`${themeClasses.fontSize.navigation} font-bold ${themeClasses.text.textDark} focus:outline-none focus:ring-2 ${themeClasses.ring.primary} focus:ring-offset-2 rounded`}
             onClick={(e) => {
               e.preventDefault()
               scrollToSection('home')
@@ -25,7 +25,7 @@ function Header() {
           
           <a 
             href="#projects" 
-            className={`px-4 py-2 ${themeClasses.bg.primary} text-white rounded-lg focus:outline-none focus:ring-2 ${themeClasses.ring.primary} focus:ring-offset-2`}
+            className={`px-4 py-2 ${themeClasses.bg.primaryContainer} ${themeClasses.text.primaryContainer} rounded-full focus:outline-none focus:ring-2 ${themeClasses.ring.primary} focus:ring-offset-2`}
             onClick={(e) => {
               e.preventDefault()
               scrollToSection('projects')

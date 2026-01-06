@@ -16,7 +16,7 @@ import { themeClasses } from '../constants/theme'
 function FlagBubble({ label, color, bg, border, size, style }) {
   return (
     <span
-      className={`rounded-full px-3 py-1 shadow-sm border ${size || themeClasses.fontSize.small} ${color || themeClasses.text.accent} ${bg || themeClasses.bg.accentLight} ${border || themeClasses.border.accentLight}`}
+      className={`rounded-full px-3 py-1 shadow-sm ${size || themeClasses.fontSize.small} ${color || themeClasses.text.secondaryContainer} ${bg || themeClasses.bg.secondaryContainer} ${border || ""}`}
       style={{
         minWidth: 'fit-content',
         boxShadow: '0 1px 4px 0 #F9B3B333',
