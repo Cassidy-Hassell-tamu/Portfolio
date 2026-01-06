@@ -56,7 +56,7 @@ export const themeClasses = {
     heroSubtitle: 'text-lg md:text-xl', // 1.125rem / 1.25rem - Hero description
     
     // Section headings
-    sectionHeading: 'text-3xl md:text-4xl', // 1.875rem / 2.25rem - Section titles (h2)
+    sectionHeading: 'text-2xl md:text-3xl', // 1.875rem / 2.25rem - Section titles (h2)
     // Card and article titles
     cardTitle: 'text-xl', // 1.25rem - Card/article titles (h3)
     // Body text - default paragraph text
