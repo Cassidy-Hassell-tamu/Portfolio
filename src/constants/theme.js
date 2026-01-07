@@ -27,7 +27,8 @@ export const themeClasses = {
   text: {
     dark: 'text-textDark',
     light: 'text-textLight',
-    primary: 'text-onPrimary',
+    primary: 'text-primary',
+    onPrimary: 'text-onPrimary',
     primaryContainer: 'text-onPrimaryContainerText',
     primaryContainerDark: 'text-onPrimaryContainerDark',
     primaryContainerLight: 'text-onPrimaryContainerLight',
