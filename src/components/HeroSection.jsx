@@ -19,7 +19,7 @@ function HeroSection() {
           </p>
           <a
             href="/Resume.pdf"
-            className="inline-flex items-center px-5 py-2 rounded-full bg-secondaryContainer text-onSecondaryContainer font-semibold shadow hover:bg-secondaryContainer transition text-sm"
+            className="inline-flex items-center px-5 py-2 rounded-full bg-secondaryContainer text-onSecondaryContainer font-semibold hover:bg-secondaryContainer transition text-sm"
             download
           >
             Resume

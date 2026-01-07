@@ -10,7 +10,7 @@ const techStack = [
 function CurrentSection() {
 	return (
 		<SectionContainer id="current" padding="small">
-			<div className="flex flex-col gap-6 py-8">
+			<div className="flex flex-col py-8">
 				<SectionHeading className="mb-4">What I’m currently working on</SectionHeading>
 				<div className="border border-primary rounded-2xl p-8 min-h-[120px] flex flex-col gap-4">
 					<div className="flex flex-wrap gap-3 mb-2">

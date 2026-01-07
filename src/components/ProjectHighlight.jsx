@@ -62,7 +62,7 @@ function ProjectHighlight({ title, stack, description, image, flags }) {
             <img
               src={image}
               alt={title + ' project screenshot'}
-              className="rounded-xl object-cover max-w-[180px] max-h-[140px] shadow-md border border-gray-200 bg-white p-1"
+              className="rounded-xl object-cover max-w-[180px] max-h-[140px] border border-gray-200 bg-white p-1"
               style={{ aspectRatio: '4/3' }}
             />
           </div>
