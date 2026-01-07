@@ -7,7 +7,7 @@ import { currentSection } from "../constants/currentSection";
 
 function CurrentSection() {
 	return (
-		<SectionContainer id="current" padding="small">
+		<SectionContainer id="current">
 			<div className="flex flex-col py-8">
 				<SectionHeading className="mb-4">What I’m currently working on</SectionHeading>
 				<div className="border border-primary rounded-2xl p-8 min-h-[120px] flex flex-col gap-4">

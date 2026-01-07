@@ -15,7 +15,7 @@ import FlagBubble from './FlagBubble'
  * Props:
  * @param {string} title - Project title
  * @param {string[]} stack - Array of technologies used in the project
- * @param {string[]} description - Project description
+ * @param {string} description - Project description
  * @param {string} [image] - Optional image URL for the project
  * @param {string[]} [flags] - Optional array of status flags to display
  */
@@ -26,12 +26,12 @@ function ProjectHighlight({ title, stack, description, image, flags }) {
       {Array.isArray(flags) && flags.length > 0 && (
         <div className="absolute -top-3 -right-4 flex flex-row-reverse gap-2 z-10">
           {flags.map((flag, idx) => (
-            <FlagBubble key={idx} label={flag} />
+            <FlagBubble key={idx} label={flag} color={themeClasses.text.onPrimary} bg={themeClasses.bg.primary}/>
           ))}
         </div>
       )}
       {/* Main Card Content */}
-      <div className="flex flex-col md:flex-row items-start md:items-stretch gap-4">
+      <div className="flex flex-col gap-4">
         <div className="flex-1">
           <h3 className={`${themeClasses.fontSize.cardTitle} font-bold ${themeClasses.text.primaryContainerLight} mb-2`}>
             {title}
@@ -51,19 +51,16 @@ function ProjectHighlight({ title, stack, description, image, flags }) {
             </div>
           )}
           <div className={`${themeClasses.fontSize.body} ${themeClasses.text.primaryContainerDark} space-y-2 mb-4`}>
-            {description.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+            <p>{description}</p>
           </div>
         </div>
         {/* Image Section */}
         {image && (
-          <div className="flex-shrink-0 md:ml-4 mt-4 md:mt-0 flex items-center justify-center">
+          <div className="flex items-center justify-center mt-0">
             <img
               src={image}
               alt={title + ' project screenshot'}
-              className="rounded-xl object-cover max-w-[180px] max-h-[140px] border border-gray-200 bg-white p-1"
-              style={{ aspectRatio: '4/3' }}
+              className="rounded-xl object-contain w-full max-w-full h-auto"
             />
           </div>
         )}

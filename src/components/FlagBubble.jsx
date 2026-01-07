@@ -19,7 +19,6 @@ function FlagBubble({ label, color, bg, border, size, style }) {
       className={`rounded-full px-3 py-1 ${size || themeClasses.fontSize.small} ${color || themeClasses.text.secondaryContainer} ${bg || themeClasses.bg.secondaryContainer} ${border || ""}`}
       style={{
         minWidth: 'fit-content',
-        boxShadow: '0 1px 4px 0 #F9B3B333',
         ...style,
       }}
     >
