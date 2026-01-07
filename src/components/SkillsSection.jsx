@@ -1,6 +1,7 @@
 import SectionContainer from "./SectionContainer";
 import SectionHeading from "./SectionHeading";
 import { themeClasses } from "../constants/theme";
+import { skills } from "../constants/skills";
 
 function SkillBadge({ label }) {
   return (
@@ -20,12 +21,6 @@ function SkillBadge({ label }) {
  * - Scalability: Easy to add/remove skills without affecting other sections
  * - Clarity: Separates concerns, making the codebase cleaner and more organized
  */
-
-const skills = [
-  "C++", "Java", "Python", "SQL", "React", "Figma", "VS Code",
-  "LaTeX", "Adobe Suite", "Painting"
-];
-
 function SkillsSection() {
   return (
     <SectionContainer id="skills" padding="small">
