@@ -19,7 +19,10 @@ import FlagBubble from './FlagBubble'
  * @param {string} [image] - Optional image URL for the project
  * @param {string[]} [flags] - Optional array of status flags to display
  */
+import { useState } from 'react'
+
 function ProjectHighlight({ title, stack, description, image, flags }) {
+  const [previewOpen, setPreviewOpen] = useState(false);
   return (
     <article className={`${themeClasses.bg.primaryContainer} rounded-xl p-6 relative overflow-visible`}>
       {/* Status Flags */}
@@ -60,11 +63,27 @@ function ProjectHighlight({ title, stack, description, image, flags }) {
             <img
               src={image}
               alt={title + ' project screenshot'}
-              className="rounded-xl object-contain w-full max-w-full h-auto"
+              className="rounded-xl object-contain w-full max-w-full h-auto cursor-pointer transition-transform duration-200 hover:scale-105"
+              onClick={() => setPreviewOpen(true)}
+              title="Click to preview"
             />
           </div>
         )}
       </div>
+      {/* Image Preview Modal */}
+      {previewOpen && image && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 cursor-zoom-out"
+          onClick={() => setPreviewOpen(false)}
+        >
+          <img
+            src={image}
+            alt={title + ' project screenshot preview'}
+            className="rounded-xl max-w-[90vw] max-h-[90vh] shadow-2xl border-2 border-white"
+            style={{ background: 'white' }}
+          />
+        </div>
+      )}
     </article>
   )
 }
