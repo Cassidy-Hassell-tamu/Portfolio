@@ -1,33 +1,52 @@
 import Header from './components/Header'
-import HeroSection from './components/HeroSection'
-import ProjectsSection from './components/ProjectsSection'
-import SkillsSection from './components/SkillsSection'
-
-import CurrentSection from './components/CurrentSection'
 import Footer from './components/Footer'
-import { themeClasses } from './constants/theme'
-
 import HomePage from './components/HomePage';
-import { MainContentProvider, useMainContent } from './hooks/MainContentContext';
+import ProjectsSection from './components/ProjectsSection';
+import ProjectPage from './components/ProjectPage';
+import { themeClasses } from './constants/theme';
+import { projects } from './constants/projects';
 
-function MainContentArea() {
-  const { content: Content } = useMainContent();
-  // Content is a React component (not an element)
-  return <>{Content && <Content />}</>;
-}
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 
 function App() {
   return (
-    <MainContentProvider initialComponent={HomePage}>
+    <BrowserRouter>
       <div className={`min-h-screen flex flex-col ${themeClasses.bg.background}`}>
         <Header />
         <main className="flex-grow">
-          <MainContentArea />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/projects" element={<ProjectsSection />} />
+            <Route path="/projects/:id" element={<ProjectPageWrapper />} />
+          </Routes>
         </main>
         <Footer />
       </div>
-    </MainContentProvider>
+    </BrowserRouter>
   );
+}
+
+function ProjectPageWrapper() {
+  // Get project id from URL
+  const { id } = useParams();
+  const project = projects.find(p => String(p.id) === String(id));
+  if (!project) return <div className="p-8">Project not found.</div>;
+  // Map project fields to ProjectPage props
+  return <ProjectPage
+    title={project.title}
+    description={project.description}
+    metadata={project.meta || []}
+    problemDefinition={project.problemDefinition}
+    painPoints={project.painPoints || []}
+    constraints={project.constraints || []}
+    solution={project.solution}
+    techStack={project.stack || []}
+    image={project.image}
+    processTechStack={project.processTechStack}
+    processDescription={project.processDescription}
+    learnedItems={project.learnedItems || []}
+    links={project.links || []}
+  />;
 }
 
 export default App;

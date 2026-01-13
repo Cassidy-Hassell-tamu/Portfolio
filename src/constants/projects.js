@@ -10,7 +10,12 @@ export const projects = [
       'Customers can search and filter books, view details, add items to an order as rentals or purchases, and check out, with the system generating simple HTML bills and sending them via an SMTP email service. Managers can add and update books, manage authors, review orders by payment status, and mark orders as completed, all on top of a relational schema with migrations, seeding scripts using Faker, and indexes added to keep common queries and filters fast as data grows.'
     ],
     stack: ['Python', 'MySQL', 'SqlAlchemy', 'Flask'],
-    flags: ['Course Project']
+    flags: ['Course Project'],
+    meta: [
+      {label: 'Timeline', value: '3 weeks'},
+      {label: 'Role', value: 'Full-Stack Developer'},
+      {label: 'Project', value: "Course Project for TAMU CSCE 310"}
+    ]
   },
   {
     id: 2,
@@ -22,7 +27,13 @@ export const projects = [
       'This 1.5‑month course project followed Agile practices with three sprints and two user studies. I served as scrum master and led development of core features such as authentication, the kitchen order queue, and a high‑contrast accessibility mode aligned with WCAG 2.1 for users relying on screen readers and screen magnification.'
     ],
     stack: ['Next.js', 'PostgreSQL', 'React', 'TailwindCSS', 'Agile Development'],
-    flags: ['Course Project']
+    flags: ['Course Project'],
+    meta: [
+      {label: 'Timeline', value: '1.5 months'},
+      {label: 'Role', value: 'Scrum Master / Full-Stack Developer'},
+      {label: 'Team', value: '5 students'},
+      {label: 'Project', value: "Course Project for TAMU CSCE 331"}
+    ]
   },
   {
     id: 3,
@@ -34,7 +45,12 @@ export const projects = [
       "The current version focuses on tracking groceries, expiration dates, and reminders so users can waste less food and plan meals more easily. This project has been my sandbox for learning full‑stack development and what it takes to shape a product from scratch."
     ],
     stack: ['Node.js', 'PostgreSQL', 'Express', 'React', 'Typescript'],
-    flags: ['In Progress', 'Personal Project']
+    flags: ['In Progress', 'Personal Project'],
+    meta: [
+      {label: 'Timeline', value: 'Ongoing'},
+      {label: 'Role', value: 'Full-Stack Developer'},
+      {label: 'Project', value: 'Personal Project'}
+    ]
   },
   {
     id: 4,

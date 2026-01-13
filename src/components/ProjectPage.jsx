@@ -4,9 +4,10 @@ import { themeClasses } from '../constants/theme';
 import SectionHeading from './SectionHeading';
 
 // Intro Section
-const IntroSection = ({ title, metadata }) => (
+const IntroSection = ({ title, description, metadata }) => (
   <SectionContainer padding="small" maxWidth="narrow">
     <h1 className={`${themeClasses.fontSize.heroHeading} font-bold mb-2 ${themeClasses.text.dark}`}>{title}</h1>
+    <p className={`mb-4 ${themeClasses.fontSize.body}`}>{description}</p>
     <ul className={`mb-4 ${themeClasses.fontSize.small} grid grid-cols-2 gap-x-8 gap-y-1`}>
       {metadata.map(({ label, value }) => (
         <li key={label}>
@@ -102,6 +103,7 @@ const LinksSection = ({ links }) => (
 // Main Project Page
 const ProjectPage = ({
   title,
+  description,
   metadata,
   problemDefinition,
   painPoints,
@@ -115,7 +117,7 @@ const ProjectPage = ({
   links,
 }) => (
   <div className="w-full">
-    <IntroSection title={title} metadata={metadata} />
+    <IntroSection title={title} description={description} metadata={metadata} />
     <ProblemDefinitionSection definition={problemDefinition} painPoints={painPoints} constraints={constraints} />
     <SolutionSection solution={solution} techStack={techStack} image={image} />
     <ProcessSection techStack={processTechStack} description={processDescription} />
