@@ -7,20 +7,28 @@ import CurrentSection from './components/CurrentSection'
 import Footer from './components/Footer'
 import { themeClasses } from './constants/theme'
 
-function App() {
-  return (
-    <div className={`min-h-screen flex flex-col ${themeClasses.bg.background}`}>
-      <Header />
-      <main className="flex-grow">
-        <HeroSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <CurrentSection />
-      </main>
-      <Footer />
-    </div>
-  )
+import HomePage from './components/HomePage';
+import { MainContentProvider, useMainContent } from './hooks/MainContentContext';
+
+function MainContentArea() {
+  const { content: Content } = useMainContent();
+  // Content is a React component (not an element)
+  return <>{Content && <Content />}</>;
 }
 
-export default App
+function App() {
+  return (
+    <MainContentProvider initialComponent={HomePage}>
+      <div className={`min-h-screen flex flex-col ${themeClasses.bg.background}`}>
+        <Header />
+        <main className="flex-grow">
+          <MainContentArea />
+        </main>
+        <Footer />
+      </div>
+    </MainContentProvider>
+  );
+}
+
+export default App;
 

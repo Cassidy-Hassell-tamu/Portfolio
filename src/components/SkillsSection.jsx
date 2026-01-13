@@ -7,11 +7,11 @@ function SkillLevelBar({ level }) {
   // Map level to height (in px) and color (red to green)
   const heights = [6, 12, 16, 20, 24]; // px for levels 1-5 (smaller max height)
   const colors = [
-    "bg-sky-400",    // Level 1: blue
-    "bg-sky-500",    // Level 2: deeper blue
-    "bg-cyan-400",   // Level 3: cyan
-    "bg-emerald-400",// Level 4: green
-    "bg-green-500",  // Level 5: strong green
+    "bg-sky-400",
+    "bg-sky-500",
+    "bg-cyan-400",
+    "bg-emerald-400",
+    "bg-green-500",
   ];
   const height = heights[level - 1] || heights[0];
   const color = colors[level - 1] || colors[0];
