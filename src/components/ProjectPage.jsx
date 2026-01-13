@@ -8,7 +8,7 @@ import MetaDataList from './MetaDataList';
 const IntroSection = ({ title, description, metadata }) => (
   <SectionContainer maxWidth="narrow">
     <h1 className={`${themeClasses.fontSize.heroHeading} font-bold mb-6 ${themeClasses.text.dark}`}>{title}</h1>
-    <div className="flex flex-col items-start max-w-2xl">
+    <div className="flex flex-col items-start">
       <p className={`mb-6 ${themeClasses.fontSize.body}`}>{description}</p>
       {metadata && metadata.length > 0 && <MetaDataList items={metadata} />}
     </div>
