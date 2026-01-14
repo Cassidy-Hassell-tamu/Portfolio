@@ -20,7 +20,7 @@ export default {
         onSecondary: '#FFFFFF',
         secondaryContainer: '#FF7F5E',
         onSecondaryContainer: '#410001',
-        onSecondaryContainerText: '#000000',
+        onSecondaryContainerText: '#ffffff',
         secondaryLight: '#ffab90',
         onSecondaryLight: '#000000',
         secondaryLightContainer: '#ffd0c5',

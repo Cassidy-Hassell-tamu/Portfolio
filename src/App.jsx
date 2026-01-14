@@ -42,9 +42,9 @@ function ProjectPageWrapper() {
     solution={project.solution}
     techStack={project.stack || []}
     image={project.image}
-    processTechStack={project.processTechStack}
-    processDescription={project.processDescription}
-    learnedItems={project.learnedItems || []}
+    processDescription={project.processDescription || ''}
+    process={project.process || []}
+    learnedItems={project.whatILearned || []}
     links={project.links || []}
   />;
 }

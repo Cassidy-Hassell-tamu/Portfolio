@@ -15,6 +15,26 @@ export const projects = [
       {label: 'Timeline', value: '3 weeks'},
       {label: 'Role', value: 'Full-Stack Developer'},
       {label: 'Project', value: "Course Project for TAMU CSCE 310"}
+    ],
+    problemDefinition: "Small bookstores need a simple way to manage inventory, sales, and customer records without expensive or complex software.",
+    painPoints: [
+      "Manual tracking leads to errors and lost sales"
+    ],
+    constraints: [
+      "Must be a desktop application (not web-based)",
+      "Must support multiple user roles with secure access controls"
+    ],
+    solution: "Developed a Python desktop application with a GUI for both customers and managers, connected to a secure Flask REST API and MySQL database. Implemented role-based authentication and authorization, and provided features for inventory, sales, and customer management.",
+    whatILearned: [
+      "How to design and implement secure role-based authentication with JWT",
+      "Building a desktop GUI that interacts with a REST API",
+      "Managing relational data and optimizing queries for performance"
+    ],
+    process: [
+      "Started with requirements gathering and user role definition",
+      "Designed the database schema and API endpoints",
+      "Iteratively built and tested the GUI and backend features",
+      "Used Faker for data seeding and added indexes for query speed"
     ]
   },
   {
@@ -33,6 +53,27 @@ export const projects = [
       {label: 'Role', value: 'Scrum Master / Full-Stack Developer'},
       {label: 'Team', value: '5 students'},
       {label: 'Project', value: "Course Project for TAMU CSCE 331"}
+    ],
+    problemDefinition: "Fast food chains require a reliable, easy-to-use point-of-sale system that supports quick order entry and payment processing.",
+    painPoints: [
+      "Many competitor POS systems have customer kiosks, which Panda Express lacks",
+      "Accessibility features are often overlooked in POS systems"
+    ],
+    constraints: [
+      "Must support multiple user roles with distinct workflows",
+      "Must be accessible to users with disabilities guided by the disability personas defined in class"
+    ],
+    solution: "Built a full-stack POS web app with tailored workflows for cashiers, managers, kitchen staff, and customers. Integrated accessibility features and third-party services for authentication and translation. Followed Agile development with sprints and user studies.",
+    whatILearned: [
+      "Implementing accessibility features for web apps (WCAG 2.1)",
+      "Managing Agile sprints and user feedback",
+      "Integrating third-party APIs for authentication and translation",
+      "Designing multi-role workflows in a POS system"
+    ],
+    process: [
+      "Defined user personas and accessibility requirements",
+      "Planned and executed three Agile sprints",
+      "Conducted user studies and iterated on feedback",
     ]
   },
   {
@@ -49,7 +90,29 @@ export const projects = [
     meta: [
       {label: 'Timeline', value: 'Ongoing'},
       {label: 'Role', value: 'Full-Stack Developer'},
+      {label: 'Team', value: 'Project with guidance from mentor'},
       {label: 'Project', value: 'Personal Project'}
+    ],
+    problemDefinition: "People often lose track of what groceries they have and when they expire, leading to wasting food and money.",
+    painPoints: [
+      "Manual tracking is tedious and error-prone"
+    ],
+    constraints: [
+      "Should work for both individuals and households",
+      "Needs to scan or input items quickly (barcode or manual entry)",
+      "Needs to send timely reminders before expiration"
+    ],
+    solution: "Loam is currently under development as a learning project. The backend and PostgreSQL database are partially completed, and the frontend is just starting. The project began as an introduction to databases, APIs, and full-stack development.",
+    whatILearned: [
+      "Basics of database design and writing SQL queries",
+      "How to create API endpoints and follow backend conventions",
+      "Using Git with branches for version control",
+      "Introductory full-stack development concepts"
+    ],
+    process: [
+      "Started with little background in databases or APIs",
+      "Built and tested parts of the backend and database schema",
+      "Began building the frontend after initial backend progress"
     ]
   },
   {

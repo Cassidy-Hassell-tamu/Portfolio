@@ -20,6 +20,7 @@ import FlagBubble from './FlagBubble'
  * @param {string[]} [flags] - Optional array of status flags to display
  */
 import { useState } from 'react'
+import TechStackPills from './TechStackPills'
 
 function ProjectHighlight({ title, stack, description, image, flags }) {
   const [previewOpen, setPreviewOpen] = useState(false);
@@ -40,19 +41,7 @@ function ProjectHighlight({ title, stack, description, image, flags }) {
             {title}
           </h3>
           {/* Tech Stack */}
-          {stack && stack.length > 0 && (
-            <div className="mb-3">
-              <ul className="flex flex-wrap gap-2" role="list">
-                {stack.map((tech, index) => (
-                  <li key={index}>
-                    <span className={`${themeClasses.fontSize.small} ${themeClasses.text.primaryContainerDark} px-2.5 py-1 bg-white/70 rounded inline-block transition-transform duration-200 hover:scale-105`}>
-                      {tech}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          <TechStackPills stack={stack} />
           <div className={`${themeClasses.fontSize.body} ${themeClasses.text.primaryContainerDark} space-y-2 mb-4`}>
             <p>{description}</p>
           </div>

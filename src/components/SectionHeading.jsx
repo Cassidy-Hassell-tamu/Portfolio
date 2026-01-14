@@ -17,7 +17,7 @@ import { themeClasses } from '../constants/theme'
  */
 function SectionHeading({ children, className = '' }) {
   return (
-    <h2 className={`${themeClasses.fontSize.sectionHeading} font-semibold ${themeClasses.text.dark} mb-8 ${className}`}>
+    <h2 className={`${themeClasses.fontSize.sectionHeading} font-semibold ${themeClasses.text.dark} mb-6 ${className}`}>
       {children}
     </h2>
   )

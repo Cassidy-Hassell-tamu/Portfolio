@@ -33,7 +33,7 @@ export const themeClasses = {
     primaryContainerDark: 'text-onPrimaryContainerDark',
     primaryContainerLight: 'text-onPrimaryContainerLight',
     secondary: 'text-onSecondary',
-    secondaryContainer: 'text-onSecondaryContainer',
+    secondaryContainer: 'text-onSecondaryContainerText',
     secondaryLight: 'text-onSecondaryLight',
     secondaryLightContainer: 'text-onSecondaryLightContainer',
     neutral: 'text-neutral',
