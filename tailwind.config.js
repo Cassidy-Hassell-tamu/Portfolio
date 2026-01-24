@@ -27,7 +27,7 @@ export default {
         onSecondaryLightContainer: '#000000', 
         neutral: '#636262',
         onNeutral: '#FFFFFF',
-        neutralContainer: '#EBEBEB',
+        neutralContainer: '#F4F4F4',
         onNeutralContainer: '#000000',
       },
     },

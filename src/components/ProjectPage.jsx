@@ -3,7 +3,6 @@ import "@fontsource/baloo-2/700.css";
 import "@fontsource/fredoka/700.css";
 // Import Inter font for step numbers
 import "@fontsource/inter/700.css";
-import React from 'react';
 import SectionContainer from './SectionContainer';
 import { themeClasses } from '../constants/theme';
 import SectionHeading from './SectionHeading';
@@ -12,7 +11,7 @@ import TechStackPills from './TechStackPills';
 
 // Intro Section
 const IntroSection = ({ title, description, metadata }) => (
-  <SectionContainer maxWidth="narrow">
+  <SectionContainer maxWidth="narrow" className="bg-leaves-neutral">
     <h1 className={`${themeClasses.fontSize.heroHeading} font-bold mb-6 ${themeClasses.text.dark}`}>{title}</h1>
     <div className="flex flex-col items-start">
       {description.map ? description.map((para, idx) => (
@@ -27,7 +26,7 @@ const IntroSection = ({ title, description, metadata }) => (
 
 // Problem Definition Section
 const ProblemDefinitionSection = ({ definition, painPoints, constraints }) => (
-  <SectionContainer maxWidth="narrow">
+  <SectionContainer maxWidth="narrow" padding="large" className="bg-neutralContainer">
     <SectionHeading>Problem Definition</SectionHeading>
     <div className={`mb-2 ${themeClasses.fontSize.body}`}>{definition}</div>
     <div className="mb-2">
@@ -127,11 +126,23 @@ const ProcessSection = ({ process = [], images = [] }) => (
 
 // What I Learned Section
 const WhatILearnedSection = ({ items }) => (
-  <SectionContainer maxWidth="narrow">
+  <SectionContainer>
     <SectionHeading>What I Learned</SectionHeading>
-    <div className="flex gap-4 flex-wrap">
+    <div
+      className="w-full flex flex-wrap justify-center gap-x-8 gap-y-6
+        lg:mx-[-4rem] xl:mx-[-6rem] 2xl:mx-[-8rem]
+        lg:w-[calc(100%+8rem)] xl:w-[calc(100%+12rem)] 2xl:w-[calc(100%+16rem)]
+        mx-auto"
+      style={{ transition: 'margin 0.2s, width 0.2s' }}
+    >
       {items.map((item, idx) => (
-        <span key={idx} className={`bg-primaryContainer ${themeClasses.text.primaryContainer} rounded px-4 py-2 ${themeClasses.fontSize.small}`}>{item}</span>
+        <span
+          key={idx}
+          className={`bg-primaryContainer ${themeClasses.text.primary} rounded-2xl px-7 py-4 ${themeClasses.fontSize.body} font-normal transition-all duration-200 hover:shadow-md hover:-translate-y-1 hover:bg-primaryContainer/100`}
+          style={{ minWidth: '180px', textAlign: 'center' }}
+        >
+          {item}
+        </span>
       ))}
     </div>
   </SectionContainer>
@@ -170,20 +181,20 @@ const ProjectPage = ({
 }) => (
   <div className="w-full py-6 sm:px-6 lg:px-8 space-y-8">
     <IntroSection title={title} description={description} metadata={metadata || []} />
-    {Boolean(problemDefinition || (painPoints && painPoints.length > 0) || (constraints && constraints.length > 0)) ? (
-      <ProblemDefinitionSection definition={problemDefinition} painPoints={painPoints || []} constraints={constraints || []} />
-    ) : null}
-    {Boolean(solution || (techStack && techStack.length > 0) || image) ? (
-      <SolutionSection solution={solution} techStack={techStack || []} image={image} />
-    ) : null}
-    {Boolean(process || processDescription || processImages) ? (
-      <ProcessSection process={process} description={processDescription} images={processImages} />
+    {links && links.length > 0 ? (
+      <LinksSection links={links} />
     ) : null}
     {learnedItems && learnedItems.length > 0 ? (
       <WhatILearnedSection items={learnedItems} />
     ) : null}
-    {links && links.length > 0 ? (
-      <LinksSection links={links} />
+    {Boolean(problemDefinition || (painPoints && painPoints.length > 0) || (constraints && constraints.length > 0)) ? (
+      <ProblemDefinitionSection definition={problemDefinition} painPoints={painPoints || []} constraints={constraints || []} />
+    ) : null}
+    {Boolean(process || processDescription || processImages) ? (
+      <ProcessSection process={process} description={processDescription} images={processImages} />
+    ) : null}
+    {Boolean(solution || (techStack && techStack.length > 0) || image) ? (
+      <SolutionSection solution={solution} techStack={techStack || []} image={image} />
     ) : null}
   </div>
 );
