@@ -28,21 +28,23 @@ const IntroSection = ({ title, description, metadata }) => (
 const ProblemDefinitionSection = ({ definition, painPoints, constraints }) => (
   <SectionContainer maxWidth="narrow" padding="large" className="bg-neutralContainer">
     <SectionHeading>Problem Definition</SectionHeading>
-    <div className={`mb-2 ${themeClasses.fontSize.body}`}>{definition}</div>
-    <div className="mb-2">
-      <span className="font-medium">Pain Points</span>
-      <ul className="list-disc ml-6">
-        {painPoints.map((point, idx) => <li key={idx}>{point}</li>)}
-      </ul>
-    </div>
-    {constraints && constraints.length > 0 && (
-      <div>
-        <span className="font-medium">Constraints</span>
+    <div className={`mb-4 ${themeClasses.fontSize.body}`}>{definition}</div>
+    <div className="flex justify-between">
+      <div className="mb-2">
+        <span className="font-medium">Pain Points</span>
         <ul className="list-disc ml-6">
-          {constraints.map((c, idx) => <li key={idx}>{c}</li>)}
+          {painPoints.map((point, idx) => <li key={idx}>{point}</li>)}
         </ul>
       </div>
-    )}
+      {constraints && constraints.length > 0 && (
+        <div>
+          <span className="font-medium">Constraints</span>
+          <ul className="list-disc ml-6">
+            {constraints.map((c, idx) => <li key={idx}>{c}</li>)}
+          </ul>
+        </div>
+      )}
+    </div>
   </SectionContainer>
 );
 
