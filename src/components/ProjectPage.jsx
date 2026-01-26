@@ -75,32 +75,30 @@ const SolutionSection = ({ solution, techStack, image }) => (
 const ProcessSection = ({ process = [], image = null }) => (
   <SectionContainer maxWidth="narrow">
     <SectionHeading>Process</SectionHeading>
-    {/* <div className="p-6 rounded-lg space-y-8" > */}
-      {/* Optional image */}
-      {image && (
-        <div className="mb-6">
-          <img src={`${base}${image}`} alt="Process methodology" className="w-full max-w-xl border rounded" />
-        </div>
-      )}
-      {/* Process attributes */}
-      <div
-        className={`grid gap-8`}
-        style={{
-          gridTemplateColumns: `repeat(${Math.min(process.length, 3)}, minmax(0, 1fr))`
-        }}
-      >
-        {process.map(({ label, bullets }, idx) => (
-          <div key={idx}>
-            <div className="font-medium mb-2 text-medium">{label}</div>
-            <ul className="list-disc ml-6 space-y-1">
-              {bullets.map((bullet, bIdx) => (
-                <li key={bIdx} className={themeClasses.fontSize.body}>{bullet}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+    {/* Optional image */}
+    {image && (
+      <div className="mb-6">
+        <img src={`${base}${image}`} alt="Process methodology" className="w-full max-w-xl border rounded" />
       </div>
-    {/* </div> */}
+    )}
+    {/* Process attributes */}
+    <div
+      className={`grid gap-8`}
+      style={{
+        gridTemplateColumns: `repeat(${Math.min(process.length, 3)}, minmax(0, 1fr))`
+      }}
+    >
+      {process.map(({ label, bullets }, idx) => (
+        <div key={idx}>
+          <div className="font-medium mb-2 text-medium">{label}</div>
+          <ul className="list-disc ml-6 space-y-1">
+            {bullets.map((bullet, bIdx) => (
+              <li key={bIdx} className={themeClasses.fontSize.body}>{bullet}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
   </SectionContainer>
 );
 
@@ -169,7 +167,6 @@ const ProjectPage = ({
     {Boolean(problemDefinition || (painPoints && painPoints.length > 0) || (constraints && constraints.length > 0)) ? (
       <ProblemDefinitionSection definition={problemDefinition} painPoints={painPoints || []} constraints={constraints || []} />
     ) : null}
-    {console.log(process, processImage)}
     {Boolean(process && process.length > 0 || processImage) ? (
       <ProcessSection process={process} image={processImage} />
     ) : null}
