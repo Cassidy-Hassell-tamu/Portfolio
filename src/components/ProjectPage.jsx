@@ -26,10 +26,11 @@ const IntroSection = ({ title, description, metadata }) => (
 
 // Problem Definition Section
 const ProblemDefinitionSection = ({ definition, painPoints, constraints }) => (
+  <div className="-mx-6 lg:-mx-8">
   <SectionContainer maxWidth="narrow" padding="large" className="bg-neutralContainer">
     <SectionHeading>Problem Definition</SectionHeading>
     <div className={`mb-4 ${themeClasses.fontSize.body}`}>{definition}</div>
-    <div className="flex justify-between">
+    <div className="flex gap-8 justify-between">
       <div className="mb-2">
         <span className="font-medium">Pain Points</span>
         <ul className="list-disc ml-6">
@@ -46,6 +47,7 @@ const ProblemDefinitionSection = ({ definition, painPoints, constraints }) => (
       )}
     </div>
   </SectionContainer>
+  </div>
 );
 
 // Solution Section
@@ -63,66 +65,36 @@ const SolutionSection = ({ solution, techStack, image }) => (
 );
 
 // Process Section
-// Accepts: process (array of steps), images (optional array)
-const accentColors = [
-  'bg-primaryContainer',
-  'bg-secondaryLightContainer',
-  'bg-neutralContainer',
-  'bg-primary',
-  'bg-secondaryContainer',
-];
-const textColors = [
-  'text-onPrimaryContainerText',
-  'text-onSecondaryLightContainer',
-  'text-onNeutralContainer',
-  'text-onPrimary',
-  'text-onSecondaryContainer',
-];
 
-const ProcessSection = ({ process = [], images = [] }) => (
+const ProcessSection = ({ process = [], image = null }) => (
   <SectionContainer maxWidth="narrow">
     <SectionHeading>Process</SectionHeading>
-    <div className="rounded-2xl p-6 bg-white/90 border border-primary flex flex-col gap-8">
-      {Array.isArray(process) && process.length > 0 ? (
-        <div className="flex flex-col gap-8">
-          {process.map((step, idx) => {
-            const accent = accentColors[idx % accentColors.length];
-            const text = textColors[idx % textColors.length];
-            const isEven = idx % 2 === 0;
-            return (
-              <div
-                key={idx}
-                className={`flex flex-col sm:flex-row items-stretch gap-4 ${isEven ? '' : 'sm:flex-row-reverse'}`}
-              >
-                {/* Accent shape */}
-                  <div className={`flex items-center justify-center sm:w-32 w-full`}>
-                    <div className={`w-20 h-20 ${accent} flex items-center justify-center border-2 border-white rounded-full`}>
-                      <span
-                        className={`text-4xl font-extrabold ${text} select-none`}
-                        style={{ fontFamily: 'Fredoka, Inter, Arial, sans-serif', letterSpacing: '1px', fontWeight: 700 }}
-                      >
-                        {idx + 1}
-                      </span>
-                    </div>
-                  </div>
-                {/* Step content */}
-                <div className={`flex-1 px-4 py-3 rounded-xl bg-white border border-primary font-medium flex items-center`}>
-                  {step}
-                </div>
-                {/* Optional image, styled as a flat card */}
-                {images[idx] && (
-                  <div className="flex items-center justify-center sm:w-40 w-full">
-                    <img src={images[idx]} alt={`Process step ${idx + 1}`} className="rounded-2xl border border-neutralContainer max-w-xs w-full h-auto bg-white" />
-                  </div>
-                )}
-              </div>
-            );
-          })}
+    {/* <div className="p-6 rounded-lg space-y-8" > */}
+      {/* Optional image */}
+      {image && (
+        <div className="mb-6">
+          <img src={image} alt="Process methodology" className="w-full max-w-xl border rounded" />
         </div>
-      ) : (
-        <div className={`${themeClasses.text.neutral} italic`}>No process steps available.</div>
       )}
-    </div>
+      {/* Process attributes */}
+      <div
+        className={`grid gap-8`}
+        style={{
+          gridTemplateColumns: `repeat(${Math.min(process.length, 3)}, minmax(0, 1fr))`
+        }}
+      >
+        {process.map(({ label, bullets }, idx) => (
+          <div key={idx}>
+            <div className="font-medium mb-2 text-lg">{label}</div>
+            <ul className="list-disc ml-6 space-y-1">
+              {bullets.map((bullet, bIdx) => (
+                <li key={bIdx} className={themeClasses.fontSize.body}>{bullet}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    {/* </div> */}
   </SectionContainer>
 );
 
@@ -175,9 +147,8 @@ const ProjectPage = ({
   solution,
   techStack,
   image,
-  processDescription,
 	process,
-	processImages,
+	processImage,
   learnedItems,
   links,
 }) => (
@@ -192,8 +163,9 @@ const ProjectPage = ({
     {Boolean(problemDefinition || (painPoints && painPoints.length > 0) || (constraints && constraints.length > 0)) ? (
       <ProblemDefinitionSection definition={problemDefinition} painPoints={painPoints || []} constraints={constraints || []} />
     ) : null}
-    {Boolean(process || processDescription || processImages) ? (
-      <ProcessSection process={process} description={processDescription} images={processImages} />
+    {console.log(process, processImage)}
+    {Boolean(process && process.length > 0 || processImage) ? (
+      <ProcessSection process={process} image={processImage} />
     ) : null}
     {Boolean(solution || (techStack && techStack.length > 0) || image) ? (
       <SolutionSection solution={solution} techStack={techStack || []} image={image} />

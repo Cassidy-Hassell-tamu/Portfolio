@@ -31,10 +31,17 @@ export const projects = [
       "Managing relational data and optimizing queries for performance"
     ],
     process: [
-      "Started with requirements gathering and user role definition",
-      "Designed the database schema and API endpoints",
-      "Iteratively built and tested the GUI and backend features",
-      "Used Faker for data seeding and added indexes for query speed"
+      {
+        label: "Database Design",
+        bullets: ["Designed the database schema with relationships and indexes"]
+      },
+      {
+        label: "Rest API Development",
+        bullets: ["Developed the REST API endpoints and integrated with the database", 
+        "Implemented JWT authentication and role-based access control", 
+        "Tested API endpoints with Postman"
+        ]
+      }
     ]
   },
   {
@@ -71,9 +78,18 @@ export const projects = [
       "Designing multi-role workflows in a POS system"
     ],
     process: [
-      "Defined user personas and accessibility requirements",
-      "Planned and executed three Agile sprints",
-      "Conducted user studies and iterated on feedback",
+      {
+        label: "User Personas & Accessibility",
+        bullets: ["Defined user personas and accessibility requirements"]
+      },
+      {
+        label: "Agile Sprints",
+        bullets: ["Planned and executed three 1-2 week Agile sprints"]
+      },
+      {
+        label: "User Studies & Iteration",
+        bullets: ["Conducted user studies and iterated on feedback after each sprint"]
+      }
     ]
   },
   {
@@ -108,11 +124,6 @@ export const projects = [
       "How to create API endpoints and follow backend conventions",
       "Using Git with branches for version control",
       "Introductory full-stack development concepts"
-    ],
-    process: [
-      "Started with little background in databases or APIs",
-      "Built and tested parts of the backend and database schema",
-      "Began building the frontend after initial backend progress"
     ]
   },
   {
