@@ -28,6 +28,9 @@ import { themeClasses } from '../constants/theme';
  *
  * Each option should provide a label and an action function to be called when selected.
  */
+
+import { useEffect } from 'react';
+
 function DropdownMenu({
   label,
   options,
@@ -41,6 +44,32 @@ function DropdownMenu({
 }) {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
+  const dropdownRef = useRef(null);
+  const [alignRight, setAlignRight] = useState(false);
+
+  // Estimate menu width in px (Tailwind w-56 = 14rem = 224px)
+  function getMenuWidthPx() {
+    if (menuWidth.startsWith('w-')) {
+      // Only handle Tailwind w- classes for now
+      const map = { 'w-56': 224, 'w-48': 192, 'w-64': 256, 'w-40': 160 };
+      return map[menuWidth] || 224;
+    }
+    // fallback: try to parse px
+    const px = menuWidth.match(/(\d+)px/);
+    if (px) return parseInt(px[1], 10);
+    return 224;
+  }
+
+  // Decide alignment before rendering dropdown
+  function handleOpen() {
+    if (menuRef.current) {
+      const buttonRect = menuRef.current.getBoundingClientRect();
+      const menuW = getMenuWidthPx();
+      const spaceRight = window.innerWidth - buttonRect.left;
+      setAlignRight(spaceRight < menuW + 8); // 8px margin
+    }
+    setOpen((o) => !o);
+  }
 
   // Close dropdown when clicking outside
   function handleBlur(e) {
@@ -61,7 +90,7 @@ function DropdownMenu({
       {/* Dropdown trigger button */}
       <button
         className={`px-4 py-3 rounded-full transition-colors duration-150 inline-flex items-center gap-1.5 focus:outline-none ${buttonColor} ${buttonClass}`}
-        onClick={() => setOpen((o) => !o)}
+        onClick={handleOpen}
         aria-haspopup="true"
         aria-expanded={open}
         onBlur={handleBlur}
@@ -82,7 +111,8 @@ function DropdownMenu({
       {/* Dropdown menu */}
       {open && (
         <div
-          className={`absolute left-0 mt-2 ${menuWidth} ${rounded} ${shadow} z-20 bg-white border border-neutral-200 overflow-hidden ${menuClass}`}
+          ref={dropdownRef}
+          className={`absolute mt-2 ${menuWidth} ${rounded} ${shadow} z-20 bg-white border border-neutral-200 overflow-hidden ${menuClass} ${alignRight ? 'right-0 left-auto' : 'left-0'}`}
         >
           <ul role="menu" aria-label={label}>
             {options.map((option, idx) => {
