@@ -8,6 +8,8 @@ import { projects } from './constants/projects';
 
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 
+const base = import.meta.env.BASE_URL || '/';
+
 function App() {
   return (
     <BrowserRouter>
@@ -15,9 +17,9 @@ function App() {
         <Header />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/projects" element={<ProjectsSection />} />
-            <Route path="/projects/:id" element={<ProjectPageWrapper />} />
+            <Route path={`${base}`} element={<HomePage />} />
+            <Route path={`${base}projects`} element={<ProjectsSection />} />
+            <Route path={`${base}projects/:id`} element={<ProjectPageWrapper />} />
           </Routes>
         </main>
         <Footer />

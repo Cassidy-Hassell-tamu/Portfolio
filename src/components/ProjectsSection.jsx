@@ -5,6 +5,8 @@ import SectionHeading from './SectionHeading';
 import ProjectHighlight from './ProjectHighlight';
 import { projects } from '../constants/projects';
 
+const base = import.meta.env.BASE_URL || '/';
+
 function ProjectsSection() {
   return (
     <SectionContainer id="projects">
@@ -13,7 +15,7 @@ function ProjectsSection() {
         {projects.map((project) => (
           <Link
             key={project.id}
-            to={`/projects/${project.id}`}
+            to={`${base}projects/${project.id}`}
             className="block text-left w-full bg-transparent border-none p-0"
             style={{ textDecoration: 'none' }}
           >
