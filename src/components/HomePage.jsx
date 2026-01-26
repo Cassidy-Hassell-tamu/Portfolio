@@ -8,8 +8,8 @@ function HomePage() {
     <>
       <HeroSection />
       <ProjectsSection />
-      <SkillsSection />
       <CurrentSection />
+      <SkillsSection />
     </>
   );
 }

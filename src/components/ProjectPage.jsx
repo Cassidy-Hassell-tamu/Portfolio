@@ -9,6 +9,8 @@ import SectionHeading from './SectionHeading';
 import MetaDataList from './MetaDataList';
 import TechStackPills from './TechStackPills';
 
+const base = import.meta.env.BASE_URL || '/';
+
 // Intro Section
 const IntroSection = ({ title, description, metadata }) => (
   <SectionContainer maxWidth="narrow" className="bg-leaves-neutral">
@@ -52,13 +54,15 @@ const ProblemDefinitionSection = ({ definition, painPoints, constraints }) => (
 
 // Solution Section
 const SolutionSection = ({ solution, techStack, image }) => (
-  <SectionContainer maxWidth="narrow">
-    <SectionHeading>Solution</SectionHeading>
+  <SectionContainer maxWidth="narrow" className="bg-plus-neutral pb-6">
+    <div className="flex items-center justify-between">
+      <SectionHeading>Solution</SectionHeading>
+		  {techStack && techStack.length > 0 && <TechStackPills stack={techStack} bg={themeClasses.bg.neutralContainer} color={themeClasses.text.neutralContainer} />}
+    </div>
     <div className={`mb-2 ${themeClasses.fontSize.body}`}>{solution}</div>
-		{techStack && techStack.length > 0 && <TechStackPills stack={techStack} bg={themeClasses.bg.secondaryLightContainer} color={themeClasses.text.secondaryLightContainer} />}
     {image && (
       <div className="mt-4">
-        <img src={image} alt="Project screenshot" className="w-full max-w-xl border rounded" />
+        <img src={`${base}${image}`} alt="Project screenshot" className="w-full max-w-xl border rounded" />
       </div>
     )}
   </SectionContainer>
@@ -73,7 +77,7 @@ const ProcessSection = ({ process = [], image = null }) => (
       {/* Optional image */}
       {image && (
         <div className="mb-6">
-          <img src={image} alt="Process methodology" className="w-full max-w-xl border rounded" />
+          <img src={`${base}${image}`} alt="Process methodology" className="w-full max-w-xl border rounded" />
         </div>
       )}
       {/* Process attributes */}
@@ -85,7 +89,7 @@ const ProcessSection = ({ process = [], image = null }) => (
       >
         {process.map(({ label, bullets }, idx) => (
           <div key={idx}>
-            <div className="font-medium mb-2 text-lg">{label}</div>
+            <div className="font-medium mb-2 text-medium">{label}</div>
             <ul className="list-disc ml-6 space-y-1">
               {bullets.map((bullet, bIdx) => (
                 <li key={bIdx} className={themeClasses.fontSize.body}>{bullet}</li>

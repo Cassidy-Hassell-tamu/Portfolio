@@ -1,6 +1,8 @@
 import { themeClasses } from '../constants/theme'
 import FlagBubble from './FlagBubble'
 
+const base = import.meta.env.BASE_URL || '/';
+
 /**
  * ProjectHighlight Component
  * 
@@ -50,7 +52,7 @@ function ProjectHighlight({ title, stack, description, image, flags }) {
         {image && (
           <div className="flex items-center justify-center mt-0">
             <img
-              src={image}
+              src={`${base}${image}`}
               alt={title + ' project screenshot'}
               className="rounded-xl object-contain w-full max-w-full h-auto cursor-pointer transition-transform duration-200 hover:scale-105"
               onClick={() => setPreviewOpen(true)}
