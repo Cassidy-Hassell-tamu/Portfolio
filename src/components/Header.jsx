@@ -3,10 +3,12 @@ import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { projects } from '../constants/projects';
 import DropdownMenu from './DropdownMenu';
 
+const base = import.meta.env.BASE_URL || '/';
+
 const navItems = [
-  { name: 'About', to: '/' },
-  { name: 'Art & Design', to: '/art' },
-  { name: 'Contact', to: '/contact' },
+  { name: 'About', to: `${base}` },
+  // { name: 'Art & Design', to: `${base}art` },
+  { name: 'Contact', to: `${base}contact` },
 ];
 
 function Header() {
@@ -14,7 +16,7 @@ function Header() {
   const location = useLocation();
   // Find selected project key from current route
   let selectedProjectKey = undefined;
-  const match = location.pathname.match(/^\/projects\/(.+)$/);
+  const match = location.pathname.match(new RegExp(`^${base}projects/(.+)$`));
   if (match) {
     selectedProjectKey = match[1];
   }
@@ -23,8 +25,8 @@ function Header() {
       <nav className="container mx-auto px-4 py-6" aria-label="Main navigation">
         <div className="flex items-center justify-between">
           <NavLink
-            to="/"
-            className={({ isActive }) =>
+            to={`${base}`}
+            className={() =>
               `${themeClasses.fontSize.navigation} font-bold ${themeClasses.text.dark} focus:outline-none rounded`
             }
             end
@@ -42,7 +44,7 @@ function Header() {
                   ? `${themeClasses.bg.primaryContainer} ${themeClasses.text.primaryContainer}`
                   : `${themeClasses.text.dark} bg-transparent hover:${themeClasses.bg.neutralContainer} hover:${themeClasses.text.dark}`)
               }
-              end={navItems[0].to === '/'}
+              end={navItems[0].to === base}
             >
               {navItems[0].name}
             </NavLink>
@@ -52,7 +54,7 @@ function Header() {
               options={projects.map((project) => ({
                 label: project.title,
                 key: project.id,
-                action: () => navigate(`/projects/${project.id}`),
+                action: () => navigate(`${base}projects/${project.id}`),
               }))}
               selectedKey={selectedProjectKey}
             />
@@ -67,7 +69,7 @@ function Header() {
                     ? `${themeClasses.bg.primaryContainer} ${themeClasses.text.primaryContainer}`
                     : `${themeClasses.text.dark} bg-transparent hover:${themeClasses.bg.neutralContainer} hover:${themeClasses.text.dark}`)
                 }
-                end={to === '/'}
+                end={to === base}
               >
                 {name}
               </NavLink>
