@@ -18,39 +18,29 @@ export const projects = [
     ],
     problemDefinition: "Small bookstores need a simple way to manage inventory, sales, and customer records without expensive or complex software.",
     painPoints: [
-      "Manual tracking leads to errors and lost sales"
+      "Manual tracking leads to errors and lost sales",
+      "Lack of role-based access leads to security issues",
     ],
     constraints: [
       "Must be a desktop application (not web-based)",
-      "Must support multiple user roles with secure access controls"
+      "Must support multiple user roles with secure access controls", 
+      "Average response time for common queries under 200ms"
     ],
     solution: "Developed a Python desktop application with a GUI for both customers and managers, connected to a secure Flask REST API and MySQL database. Implemented role-based authentication and authorization, and provided features for inventory, sales, and customer management.",
     whatILearned: [
-      "How to design and implement secure role-based authentication with JWT",
-      "Building a desktop GUI that interacts with a REST API",
-      "Managing relational data and optimizing queries for performance"
+      "Secure role-based authentication with JWT and Python decorators",
+      "Testing REST APIs with Postman",
+      "SQLAlchemy ORM for database interactions",
+      "REST API design with Flask",
     ],
-    process: [
-      {
-        label: "Database Design",
-        bullets: ["Designed the database schema with relationships and indexes"]
-      },
-      {
-        label: "Rest API Development",
-        bullets: ["Developed the REST API endpoints and integrated with the database", 
-        "Implemented JWT authentication and role-based access control", 
-        "Tested API endpoints with Postman"
-        ]
-      }
-    ]
   },
   {
     id: 2,
     title: 'Panda Express POS System Web App',
     shortDescription:
-      "POS web app for a Panda Express–style restaurant, built with agile sprints and accessibility in mind. Supports multiple user roles and workflows.",
+      "POS web app for a Panda Express style restaurant, built with agile sprints and accessibility in mind. Supports multiple user roles and workflows.",
     description: [
-      'Built a full‑stack point‑of‑sale web app for a Panda Express–style restaurant, with a RESTful API, normalized relational database, and third‑party integrations for authentication, translation, and weather. The system supports multiple user types, including cashiers, customers, managers, and kitchen staff, with tailored workflows for each.',
+      'Built a full‑stack point‑of‑sale web app for a Panda Express style restaurant, with a RESTful API, normalized relational database, and third‑party integrations for authentication, translation, and weather. The system supports multiple user types, including cashiers, customers, managers, and kitchen staff.',
       'This 1.5‑month course project followed Agile practices with three sprints and two user studies. I served as scrum master and led development of core features such as authentication, the kitchen order queue, and a high‑contrast accessibility mode aligned with WCAG 2.1 for users relying on screen readers and screen magnification.'
     ],
     stack: ['Next.js', 'PostgreSQL', 'React', 'TailwindCSS', 'Agile Development'],
@@ -74,8 +64,9 @@ export const projects = [
     whatILearned: [
       "Implementing accessibility features for web apps (WCAG 2.1)",
       "Managing Agile sprints and user feedback",
-      "Integrating third-party APIs for authentication and translation",
-      "Designing multi-role workflows in a POS system"
+      "Google OAuth2.0 integration",
+      "React and Next.js", 
+      "Jira for project management"
     ],
     process: [
       {
@@ -120,23 +111,23 @@ export const projects = [
     ],
     solution: "Loam is currently under development as a learning project. The backend and PostgreSQL database are partially completed, and the frontend is just starting. The project began as an introduction to databases, APIs, and full-stack development.",
     whatILearned: [
+      "Using Git with branches for version control",
       "Basics of database design and writing SQL queries",
       "How to create API endpoints and follow backend conventions",
-      "Using Git with branches for version control",
       "Introductory full-stack development concepts"
     ]
   },
-  {
-    id: 4,
-    title: "Portfolio Website",
-    shortDescription:
-      "Modern portfolio site to showcase my work and skills. Designed for quick updates and easy navigation.",
-    stack: ["React", "Vite", "Tailwind CSS"],
-    description: [
-      "A personal portfolio site to showcase my projects, skills, and experience.",
-      "Built with a focus on quick iteration, modern design, and easy content updates."
-    ],
-    image: "/portfolio-figma-iterations.png",
-    flags: ["In Progress"]
-  }
+  // {
+  //   id: 4,
+  //   title: "Portfolio Website",
+  //   shortDescription:
+  //     "Modern portfolio site to showcase my work and skills. Designed for quick updates and easy navigation.",
+  //   stack: ["React", "Vite", "Tailwind CSS"],
+  //   description: [
+  //     "A personal portfolio site to showcase my projects, skills, and experience.",
+  //     "Built with a focus on quick iteration, modern design, and easy content updates."
+  //   ],
+  //   image: "/portfolio-figma-iterations.png",
+  //   flags: ["In Progress"]
+  // }
 ];

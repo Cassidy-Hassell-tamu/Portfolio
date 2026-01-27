@@ -65,7 +65,8 @@ export const themeClasses = {
     // Small text - captions, metadata, tech stacks
     small: 'text-sm', // 0.875rem - Small text for captions and metadata
     // Navigation - nav links and brand names
-    navigation: 'text-xl', // 1.25rem - Navigation links and brand names
+    navigation: 'text-xl', // 1.25rem - Navigation links 
+    name: 'text-xl', // 1.25rem - Brand names
   },
 }
 

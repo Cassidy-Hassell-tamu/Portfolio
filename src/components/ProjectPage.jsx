@@ -28,9 +28,9 @@ const IntroSection = ({ title, description, metadata }) => (
 
 // Problem Definition Section
 const ProblemDefinitionSection = ({ definition, painPoints, constraints }) => (
-  <div className="-mx-6 lg:-mx-8">
+  // <div className="-mx-6 lg:-mx-8">
   <SectionContainer maxWidth="narrow" padding="large" className="bg-neutralContainer">
-    <div className="mx-6 lg:mx-8">
+    {/* <div className="mx-6 lg:mx-8"> */}
       <SectionHeading>Problem Definition</SectionHeading>
       <div className={`mb-4 ${themeClasses.fontSize.body}`}>{definition}</div>
       <div className="flex gap-8 justify-between">
@@ -49,15 +49,15 @@ const ProblemDefinitionSection = ({ definition, painPoints, constraints }) => (
           </div>
         )}
       </div>
-    </div>
+    {/* </div> */}
   </SectionContainer>
-  </div>
+  // </div>
 );
 
 // Solution Section
 const SolutionSection = ({ solution, techStack, image }) => (
   <SectionContainer maxWidth="narrow" className="bg-plus-neutral pb-6">
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between gap-4">
       <SectionHeading>Solution</SectionHeading>
 		  {techStack && techStack.length > 0 && <TechStackPills stack={techStack} bg={themeClasses.bg.neutralContainer} color={themeClasses.text.neutralContainer} />}
     </div>
@@ -156,7 +156,7 @@ const ProjectPage = ({
   learnedItems,
   links,
 }) => (
-  <div className="w-full py-6 sm:px-6 lg:px-8 space-y-8">
+  <div className="w-full space-y-8">
     <IntroSection title={title} description={description} metadata={metadata || []} />
     {links && links.length > 0 ? (
       <LinksSection links={links} />

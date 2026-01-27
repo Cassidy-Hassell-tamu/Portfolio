@@ -30,7 +30,7 @@ function Header() {
           <NavLink
             to={`${base}`}
             className={() =>
-              `${themeClasses.fontSize.navigation} font-bold ${themeClasses.text.dark} focus:outline-none rounded`
+              `${themeClasses.fontSize.name} font-bold ${themeClasses.text.dark} focus:outline-none rounded`
             }
             end
           >
