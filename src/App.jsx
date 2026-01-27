@@ -8,6 +8,7 @@ import { themeClasses } from './constants/theme';
 import { projects } from './constants/projects';
 
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
+import ScrollToTop from './ScrollToTop';
 
 const base = import.meta.env.BASE_URL || '/';
 
@@ -17,6 +18,7 @@ function App() {
       <div className={`min-h-screen flex flex-col ${themeClasses.bg.background}`}>
         <Header />
         <SideBubbles />
+        <ScrollToTop />
         <main className="flex-grow">
           <Routes>
             <Route path={`${base}`} element={<HomePage />} />
