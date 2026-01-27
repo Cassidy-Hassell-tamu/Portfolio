@@ -1,5 +1,6 @@
 import { themeClasses } from '../constants/theme'
 import SectionContainer from './SectionContainer'
+import SideBubbles from './SideBubbles';
 
 const base = import.meta.env.BASE_URL || '/';
 
@@ -27,6 +28,11 @@ function HeroSection() {
             Resume
             <img src={`${base}download.svg`} alt="Download icon" className="w-4 h-4 ml-2" />
           </a>
+          {/* Show SideBubbles inline on mobile only */}
+          <div className="flex md:hidden">
+            {/* @ts-ignore */}
+            <SideBubbles inline />
+          </div>
         </div>
       </div>
     </SectionContainer>

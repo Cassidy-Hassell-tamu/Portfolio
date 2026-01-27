@@ -3,6 +3,7 @@ import Footer from './components/Footer'
 import HomePage from './components/HomePage';
 import ProjectsSection from './components/ProjectsSection';
 import ProjectPage from './components/ProjectPage';
+import SideBubbles from './components/SideBubbles';``
 import { themeClasses } from './constants/theme';
 import { projects } from './constants/projects';
 
@@ -15,6 +16,7 @@ function App() {
     <BrowserRouter>
       <div className={`min-h-screen flex flex-col ${themeClasses.bg.background}`}>
         <Header />
+        <SideBubbles />
         <main className="flex-grow">
           <Routes>
             <Route path={`${base}`} element={<HomePage />} />
